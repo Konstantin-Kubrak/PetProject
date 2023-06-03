@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Add person</title>
+</head>
+<body>
+  <div th:insert="fragments::header"></div>
+  <div class="d-flex justify-content-center align-items-center container ">
+    <form method="post" action="#" th:action="@{/add-user}" th:object="${userForm}" class="row row-cols-lg-auto g-3 align-items-center">
+      <div class="col-12">
+        <label for="validationDefault01" class="form-label">Name</label>
+        <input type="text" th:field="*{name}" class="form-control" id="validationDefault01"  placeholder="Ivan" required>
+      </div>
+      <div class="col-12" style="margin-top: 10px">
+        <label for="validationDefault02" class="form-label">Email</label>
+        <input type="text" class="form-control" id="validationDefault02"
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" th:field="*{email}"
+               placeholder="example@example.com" required>
+      </div>
+      <div class="col-12">
+        <label for="validationDefault03" class="form-label">Key skills</label>
+        <input type="text" th:field="*{keySkills}" class="form-control" id="validationDefault03"  placeholder="Java, SQL, Git" required>
+      </div>
+      <div class="col-12" style="margin-top: 20px">
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

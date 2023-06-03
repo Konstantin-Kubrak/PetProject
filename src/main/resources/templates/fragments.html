@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+  <div th:fragment="header" >
+    <ul class="nav">
+      <h3 style="margin: 20px">FPS</h3>
+      <a class="btn btn-outline-secondary" th:href="@{/users}" style="margin: 20px" role="button">Users</a>
+      <a class="btn btn-outline-secondary" th:href="@{/projects}" style="margin: 20px" role="button">Projects</a>
+    </ul>
+  </div>
+</body>
+</html>

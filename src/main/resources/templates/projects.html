@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Projects</title>
+</head>
+<body>
+  <div th:insert="fragments::header"></div>
+  <a class="btn btn-outline-secondary" th:href="@{/create-project}" style="position: absolute; right: 20px; top: 20px;" role="button">Create project</a>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Projects</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="project : ${projects}">
+        <td>
+          <a th:href="@{/project/{id}(id=${project.id})}"><span th:text="${project.name}"></span></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
